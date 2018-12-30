@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Axiome Communication`,
+    description: `desc`,
+    author: `@wabdsgn`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,8 +35,9 @@ module.exports = {
         accessToken: `314a82d018485b0d62d96bc26ab2016a01ce67ce8dd54b25857b5a825945c518`,
       },
     },
+    `@contentful/gatsby-transformer-contentful-richtext`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
