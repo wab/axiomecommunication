@@ -1,21 +1,21 @@
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
 
+import { Container } from './utils';
 import Logo from './logo';
 
+const Wrapper = styled.header`
+  display: flex;
+  justify-content: center;
+`;
+
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      margin: `0 auto`,
-      maxWidth: 960,
-      padding: `2rem`,
-      display: 'flex',
-      justifyContent: 'center',
-    }}
-  >
-    <Logo width="350px" />
-  </div>
+  <Container>
+    <Wrapper>
+      <Logo width="350px" />
+    </Wrapper>
+  </Container>
 );
 
 Header.propTypes = {

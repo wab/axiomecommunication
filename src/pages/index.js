@@ -2,6 +2,7 @@ import React from 'react';
 // import { Link } from 'gatsby'
 
 import Layout from '../components/layout';
+import { Heading } from '../components/utils';
 // import Image from '../components/image'
 import SEO from '../components/seo';
 
@@ -10,9 +11,9 @@ const IndexPage = ({ data }) => {
   const references = data.allContentfulReference.edges;
   return (
     <Layout>
-      <SEO title="Home" keywords={[`axiome`, `communication`, `rennes`]} />
-      <h1>{page.title}</h1>
-      <h2>{page.subtitle}</h2>
+      <SEO title="Accueil" keywords={[`axiome`, `communication`, `rennes`]} />
+      <Heading is="h1">{page.title}</Heading>
+      <Heading color="grey.medium">{page.subtitle}</Heading>
       <section
         dangerouslySetInnerHTML={{
           __html: page.introduction.childContentfulRichText.html,
