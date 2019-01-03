@@ -17,12 +17,12 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Accueil" keywords={[`axiome`, `communication`, `rennes`]} />
       {page.title && (
-        <Heading is="h1" textAlign="center">
+        <Heading is="h1" textAlign="center" fontSize={5}>
           {page.title}
         </Heading>
       )}
       {page.subtitle && (
-        <Heading color="grey.medium" textAlign="center">
+        <Heading color="grey.medium" textAlign="center" fontSize={4}>
           {page.subtitle}
         </Heading>
       )}
