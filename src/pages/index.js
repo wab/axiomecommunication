@@ -4,6 +4,7 @@ import { space, themeGet } from 'styled-system';
 import Layout from '../components/layout';
 import { Heading } from '../components/utils';
 import SEO from '../components/seo';
+import References from '../components/references';
 
 const Section = styled.section`
   border-top: solid 1px ${themeGet('colors.grey.light')};
@@ -49,11 +50,7 @@ const IndexPage = ({ data }) => {
       />
       <Section pt={4} mt={4}>
         <Heading color="grey.medium">Quelques Références :</Heading>
-        <ul>
-          {references.map(({ node }, i) => (
-            <li key={node.id}>{node.title}</li>
-          ))}
-        </ul>
+        <References items={references} />
       </Section>
     </Layout>
   );
@@ -87,6 +84,13 @@ export const pageQuery = graphql`
         node {
           id
           title
+          thumbnail {
+            fluid(maxWidth: 250) {
+              # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
+              ...GatsbyContentfulFluid
+            }
+            title
+          }
         }
       }
     }
