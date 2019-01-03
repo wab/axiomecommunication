@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { Container } from './utils';
 
-const Wrapper = styled.footer`
+const Wrapper = styled(Container)`
   text-align: center;
   color: ${themeGet('colors.grey.medium')};
+  border-top: solid 1px ${themeGet('colors.grey.light')};
 
   a,
   a:visited {
@@ -20,15 +21,13 @@ const Wrapper = styled.footer`
 `;
 
 const Footer = () => (
-  <Container>
-    <Wrapper>
+    <Wrapper fontSize={1}>
       06.83.05.06.06 •{' '}
       <a href="https://fr.linkedin.com/in/elodie-boileux-marchand-b457142b">
         linkedin
       </a>{' '}
       • © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
     </Wrapper>
-  </Container>
 );
 
 export default Footer;

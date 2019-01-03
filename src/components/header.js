@@ -13,7 +13,7 @@ const Wrapper = styled.header`
 const Header = ({ siteTitle }) => (
   <Container>
     <Wrapper>
-      <Logo width="350px" />
+      <Logo width="215px" />
     </Wrapper>
   </Container>
 );

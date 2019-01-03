@@ -8,6 +8,7 @@ import {
   maxWidth,
   fontWeight,
   lineHeight,
+  textAlign,
 } from 'styled-system';
 import tag from 'clean-tag';
 
@@ -29,4 +30,5 @@ export const Heading = styled(tag.h2)`
   ${lineHeight}
   ${space}
   ${color}
+  ${textAlign}
 `;
