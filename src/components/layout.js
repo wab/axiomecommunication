@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import Header from './header';
 import Footer from './footer';
-import { Container } from './utils';
+import { Box, Container } from './utils';
 
 import './layout.css';
 
@@ -22,11 +22,11 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
-        <>
+        <Container>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <Container>{children}</Container>
+          <Box color="grey.dark">{children}</Box>
           <Footer />
-        </>
+        </Container>
       </ThemeProvider>
     )}
   />

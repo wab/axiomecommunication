@@ -1,21 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-
-import { Container } from './utils';
+import { space } from 'styled-system';
 import Logo from './logo';
 
 const Wrapper = styled.header`
   display: flex;
   justify-content: center;
+  ${space}
 `;
 
 const Header = ({ siteTitle }) => (
-  <Container>
-    <Wrapper>
-      <Logo width="215px" />
-    </Wrapper>
-  </Container>
+  <Wrapper py={3}>
+    <Logo width="215px" />
+  </Wrapper>
 );
 
 Header.propTypes = {

@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { space, themeGet } from 'styled-system';
+import { space, color, borderRadius, themeGet } from 'styled-system';
 import Layout from '../components/layout';
 import { Heading } from '../components/utils';
 import SEO from '../components/seo';
 import References from '../components/references';
 
 const Section = styled.section`
-  border-top: solid 1px ${themeGet('colors.grey.light')};
+  border-top: solid ${props => (props.withBorder ? 1 : 0)}px
+    ${themeGet('colors.grey.light')};
   ${space}
+  ${color}
+  ${borderRadius}
 `;
 
 const IndexPage = ({ data }) => {
@@ -18,37 +21,36 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Accueil" keywords={[`axiome`, `communication`, `rennes`]} />
       {page.title && (
-        <Heading is="h1" textAlign="center" fontSize={5}>
+        <Heading is="h1" color="grey.medium" textAlign="center" fontSize={4}>
           {page.title}
         </Heading>
       )}
-      {page.subtitle && (
-        <Heading color="grey.medium" textAlign="center" fontSize={4}>
-          {page.subtitle}
-        </Heading>
-      )}
       <Section
-        pt={4}
+        p={4}
         mt={4}
+        bg="secondary.light"
+        borderRadius={8}
         dangerouslySetInnerHTML={{
           __html: page.introduction.childContentfulRichText.html,
         }}
       />
       <Section
         pt={4}
-        mt={4}
         dangerouslySetInnerHTML={{
           __html: page.skills.childContentfulRichText.html,
         }}
       />
       <Section
-        pt={4}
+        p={4}
         mt={4}
+        bg="secondary.medium"
+        color="white"
+        borderRadius={8}
         dangerouslySetInnerHTML={{
           __html: page.team.childContentfulRichText.html,
         }}
       />
-      <Section pt={4} mt={4}>
+      <Section mt={4}>
         <Heading color="grey.medium">Quelques Références :</Heading>
         <References items={references} />
       </Section>
@@ -62,7 +64,6 @@ export const pageQuery = graphql`
   {
     contentfulPage(id: { eq: "8556f0d5-4040-5195-ab62-b0dbec2c534c" }) {
       title
-      subtitle
       introduction {
         childContentfulRichText {
           html

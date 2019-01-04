@@ -18,10 +18,14 @@ export const Box = styled.div`
   ${maxWidth}
   ${fontSize}
   ${color}
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const Container = ({ ...props }) => (
-  <Box mx="auto" py={3} maxWidth={650} color="grey.dark" {...props} />
+  <Box mx="auto" py={2} px={3} maxWidth={728} {...props} />
 );
 
 export const Heading = styled(tag.h2)`
